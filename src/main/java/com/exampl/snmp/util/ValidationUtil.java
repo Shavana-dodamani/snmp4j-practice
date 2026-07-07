@@ -1,5 +1,6 @@
 package com.exampl.snmp.util;
 
+import com.exampl.snmp.config.SnmpConfig;
 import com.exampl.snmp.dto.TrapMessage;
 import org.snmp4j.*;
 import org.snmp4j.event.ResponseEvent;
@@ -49,8 +50,8 @@ public class ValidationUtil {
             );
 
 
-            target.setTimeout(3000);
-            target.setRetries(1);
+            target.setRetries(SnmpConfig.RETRIES);
+            target.setTimeout(SnmpConfig.TIMEOUT);
 
 
 
@@ -141,8 +142,8 @@ public class ValidationUtil {
             );
 
 
-            target.setTimeout(5000);
-            target.setRetries(2);
+            target.setRetries(SnmpConfig.RETRIES);
+            target.setTimeout(SnmpConfig.TIMEOUT);
 
 
 
@@ -225,8 +226,8 @@ public class ValidationUtil {
             );
 
 
-            target.setTimeout(3000);
-            target.setRetries(1);
+            target.setRetries(SnmpConfig.RETRIES);
+            target.setTimeout(SnmpConfig.TIMEOUT);
 
 
 
@@ -464,8 +465,8 @@ public class ValidationUtil {
             target.setCommunity(new OctetString(community));
             target.setVersion(SnmpConstants.version2c);
             target.setAddress(new UdpAddress(ip + "/" + port));
-            target.setRetries(2);
-            target.setTimeout(5000);
+            target.setRetries(SnmpConfig.RETRIES);
+            target.setTimeout(SnmpConfig.TIMEOUT);
 
             PDU pdu = new PDU();
 
