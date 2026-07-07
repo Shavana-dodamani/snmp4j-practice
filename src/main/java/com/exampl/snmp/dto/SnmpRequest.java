@@ -32,5 +32,6 @@ public class SnmpRequest {
     private String value;
 
     private String dataType;
+    private String operation;
 
 }
