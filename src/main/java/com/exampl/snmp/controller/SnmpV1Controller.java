@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/snmp/v1")
 public class SnmpV1Controller {
-
-
     private final SnmpV1Service service;
 
 
